@@ -8,7 +8,7 @@
                     Admin Panel
                 </div>
                 <div class="panel-body">
-                    <form method="post" action="/articles">
+                    <form method="post" action="">
 
 
                         <input type="hidden" name="user_id" value="">

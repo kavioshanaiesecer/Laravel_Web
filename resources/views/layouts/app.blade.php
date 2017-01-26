@@ -41,7 +41,7 @@
                         Code Hack
                     </a>
                     <ul class="nav navbar-nav navbar-right nav-tabs">
-                        <li class="active"><a href="">Home</a></li>
+                        <li><a href="">Home</a></li>
                         <li><a href="{{ url('admin/users') }}">Users</a></li>
                         <li><a href="#">Posts</a></li>
                         <li><a href="{{ url('admin/users/create') }}">Create</a></li>

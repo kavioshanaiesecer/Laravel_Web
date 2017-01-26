@@ -2,8 +2,31 @@
 
 @section('content')
 
+
+
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+
+            <div class="panel-danger">
+                @if(Session::has('deleted_user'))
+
+                    <p class="bg-danger">{{session('deleted_user')}}</p>
+
+                @endif
+
+                @if(Session::has('updated_user'))
+
+                    <p class="bg-danger">{{session('updated_user')}}</p>
+
+                    @endif
+
+                @if(Session::has('added_user'))
+
+                    <p class="bg-danger">{{session('added_user')}}</p>
+
+                    @endif
+
+            </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>Users</h4>
