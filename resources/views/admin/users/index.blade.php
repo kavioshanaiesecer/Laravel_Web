@@ -14,6 +14,7 @@
         <thead>
         <tr>
             <th>ID</th>
+            <th>Photo</th>
             <th>Name</th>
             <th>Email</th>
             <th>Role</th>
@@ -30,10 +31,13 @@
 
         <tr>
             <td>{{$user->id}}</td>
-            <td>{{$user->name}}</td>
+            <!--Simplified IF LOOP-->
+            <td><img height="50" src="{{$user->photo ? $user->photo->file :'http://placehold.it/200x200'}}" alt=""></td>
+            <td><a href="{{url('admin/users/'.$user->id.'/edit')}}"> {{$user->name}}</a></td>
+
             <td>{{$user->email}}</td>
             <td>{{$user->role->name}}</td>
-            <td>{{$user->is_active == 1 ? 'Active' : 'Not Active'}}            </td>
+            <td>{{$user->is_active == 1 ? 'Active' : 'Not Active'}}</td>
             <td>{{$user->created_at->diffForHumans()}}</td>
             <td>{{$user->updated_at->diffForHumans()}}</td>
         </tr>
