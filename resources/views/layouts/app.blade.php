@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>User Information System</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -32,12 +32,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
+
                     </button>
+
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Code Hack
                     </a>
+                    <ul class="nav navbar-nav navbar-right nav-tabs">
+                        <li class="active"><a href="">Home</a></li>
+                        <li><a href="{{ url('admin/users') }}">Users</a></li>
+                        <li><a href="#">Posts</a></li>
+                        <li><a href="{{ url('admin/users/create') }}">Create</a></li>
+                    </ul>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -52,6 +60,7 @@
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
+
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
